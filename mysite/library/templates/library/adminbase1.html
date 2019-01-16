@@ -1,0 +1,89 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Home{% endblock %}</title>
+    <!--load the static files-->
+
+    {% load static %}
+         <!-- Latest compiled and minified CSS -->
+        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+         <link rel="stylesheet" type="text/css" href="{% static 'library/style.css' %}">
+
+    <!-- jQuery library
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+         Latest compiled JavaScript
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+</head>
+<body>
+            <nav class="navbar navbar-dark " style="background-color:#000080">
+              <div class="container-fluid">
+                <div class="navbar-header">
+                  <a class="navbar-brand" href="/">Home</a>
+                  <a class="navbar-brand" href="{% url 'library:contact' %}">Contact</a>
+                  <a class="navbar-brand" href="{% url 'library:about' %}">About us</a>
+
+                </div>
+                 <ul class="nav navbar-nav navbar-right">
+                  <!-- <li style="color:white"><a href="{% url 'login' %}"><span class="glyphicon glyphicon-user"></span> Admin</a></li>
+                   <li style="color:white"><a href="#"><span class="glyphicon glyphicon-plus-sign"></span>Student</a></li>-->
+                     <a class="navbar-brand" href="{% url 'login' %}"><i class="fa fa-user" aria-hidden="true"></i> Admin</a>
+                 <!--    <a class="navbar-brand" href="#"><i class="fa fa-users" aria-hidden="true"></i> student</a>-->
+                 </ul>
+
+            </nav>
+
+ <nav class="navbar navbar-expand-lg navbar-light bg-warning">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="float-left">
+
+
+              <a class="navbar-brand" href="{% url 'library:book_list' %}">Book list</a>
+             <!-- <a class="navbar-brand" href="{% url 'library:bookadd' %}">Add book</a>-->
+              <a class="navbar-brand" href="{% url 'library:students' %}">Student</a>
+
+          </div>
+
+
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+          </div>
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+              <li class="nav-item active">
+                  <a class="nav-link" href="{% url 'login' %}">Logout</a>
+
+              </li>
+            </ul>
+ </nav>
+
+         <!--   <nav class="navbar navbar-expand-lg navbar-light bg-warning">
+
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+              </button>
+              <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav ">
+                  <li class="nav-item active">
+                    <a class="nav-link " href="{% url 'library:book_list' %}">Book list <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'library:bookadd' %}">Add book</a>
+                  </li>
+                  <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'login' %}">logout</a>
+                  </li>
+
+
+                </ul>
+
+              </div>
+            </nav>-->
+
+
+{% block body2 %}
+{% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+{% extends 'library/adminbase1.html' %}
+ <title>{% block title %}add_student{% endblock %}</title>
+{% block body2 %}
+<div class="container">
+  <div class="card-body">
+      <div class="container">
+         <div class="row">
+
+              <div class="container">
+
+                <form action="{% url 'library:std_add' %}" method="POST" class="form-horizontal" enctype="multipart/form-data">
+                    <h1 style="background-color:green;color:black">Student registration</h1>
+                            {% csrf_token %}
+                      <div class="text-body">
+                         {% for field in form %}
+
+                           {{ field.errors }}
+                           {{ field.label_tag }}
+                           {{ field }}
+                         {% endfor %}
+
+                          <br>
+                            <input type="submit" value="save"class="btn btn-info" style="background-color:blue"/>
+                      </div>
+                </form>
+
+              </div>
+         </div>
+      </div>
+  </div>
+</div>
+{% endblock %}

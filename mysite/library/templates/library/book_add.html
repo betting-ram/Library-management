@@ -1,0 +1,15 @@
+{% extends 'library/adminbase1.html' %}
+ <title>{% block title %}add_book{% endblock %}</title>
+{% block body2 %}
+   <h1 class="text-dark">Add book</h1>
+  <div class="jumbotron">
+      <div class="container">
+
+            <form method="POST">{% csrf_token %}
+            {{ form.as_p }}
+             <button type="submit" class="save btn btn-success">Save</button>
+            </form>
+
+      </div>
+   </div>
+{% endblock %}

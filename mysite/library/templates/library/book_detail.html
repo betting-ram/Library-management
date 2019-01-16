@@ -1,0 +1,27 @@
+{% extends 'library/adminbase1.html' %}
+ <title>{% block title %}bookdetail{% endblock %}</title>
+{% block body2 %}
+<br>
+
+<body>
+    <div class="container">
+        <table class="table table-striped table-bordered">
+            <tr class="bg-success">
+                 <th>title</th>
+                 <th>book_type</th>
+                 <th>author</th>
+                 <th>language</th>
+            </tr>
+            <tr class="bg-light">
+                <td> {{ book.title }}</td>
+                <td> {{ book.book_type }}</td>
+                <td> {{ book.author }}</td>
+                <td> {{ book.language }}</td>
+
+
+
+            </tr>
+         </table>
+    </div>
+</body>
+{% endblock %}

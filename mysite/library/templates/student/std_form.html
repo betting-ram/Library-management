@@ -1,0 +1,56 @@
+{% extends 'library/adminbase1.html' %}
+ <title>{% block title %}students_details{% endblock %}</title>
+{% block body2 %}
+
+<br>
+             <a href="/students/add/" class="btn btn-success">Add new student</a>
+            <div class="float-right">
+                <div class="btn btn-primary">  <a href="/borrow/" style="color:white">Borrow book</a></div>
+                <div class="btn btn-danger" ><a href="/return/" style="color:white">Return book</a></div>
+            </div>
+
+
+        <button id="show_book" type="button" style="display:none;" class="btn btn-success"><span
+                class="glyphicon glyphicon-circle-arrow-left"></span> Back
+        </button>
+        <div id="book_table">
+            <table id="table" class="table table-bordered">
+                <thead class="alert-success">
+                <tr>
+                    <th>Student ID</th>
+                    <th>Profile</th>
+                    <th>First name</th>
+                    <th>Last name</th>
+                    <th>Department</th>
+                    <th>Year</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for student in students %}
+                    <tr>
+                        <td>{{ student.id }}</td>
+                        <td>
+                            {% if student.picture %}
+                                <img class="img-circle" src={{student.picture.url}} height="120" width=""/>
+                            {% endif %}
+
+                        </td>
+                        <td>{{ student.firstname }}</td>
+                        <td>{{ student.lastname }}</td>
+                        <td>{{ student.department }}</td>
+                        <td>{{ student.year }}</td>
+                        <td><div class="text-right">
+                            <button type="submit" class="save btn btn-dark"><a href="{% url 'library:studentupdate' id=student.id %}">update</a></button>
+                            <button type="submit" class="save btn btn-warning"><a href="{% url 'library:studentdelete' id=student.id %}">Delete</a></button></p>
+                            </div>
+                        </td>
+
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+
+{% endblock %}

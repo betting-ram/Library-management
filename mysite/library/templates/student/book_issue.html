@@ -1,0 +1,25 @@
+{% extends 'student/stdbase.html' %}
+ <title>{% block title %}issue{% endblock %}</title>
+{% block body3 %}
+  <div class="jombotron">
+    <form action='.' method='POST'>{% csrf_token %}
+       <div class=""> <h1 style="color:black;">Are you sure you want to issue {{ object }} ?</h1>
+        <p style="text-align:center">
+            <button class="btn btn-success" onclick="notify()">Yes</button>
+            <button class="btn btn-dark"><a href="{% url 'library:bookavailable' %}">cancel</a></button>
+        </p>
+       </div>
+
+    </form>
+  </div>
+<script>
+    function notify(){
+    alert("congratulations for issuing book.\nPlease submit a book after 30 days ");
+    }
+
+</script>
+
+
+
+
+{% endblock %}

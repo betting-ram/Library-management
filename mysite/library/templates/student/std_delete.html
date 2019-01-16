@@ -1,0 +1,15 @@
+{% extends 'library/adminbase1.html' %}
+<title>{% block title %}delete_book{% endblock %}</title>
+{% block body2 %}
+  <div class="jombotron">
+    <form action='.' method='POST'>{% csrf_token %}
+       <div class=""> <h1 style="color:black;">Do you want to delete {{ object.firstname }} ?</h1>
+        <p style="text-align:center">
+            <button class="btn btn-success">Yes</button>
+            <button class="btn btn-dark"><a href="{% url 'library:students' %}">cancel</a></button>
+        </p>
+       </div>
+
+    </form>
+  </div>
+{% endblock %}

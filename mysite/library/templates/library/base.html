@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Home{% endblock %}</title>
+    <!--load the static files-->
+
+    {% load static %}
+         <!-- Latest compiled and minified CSS -->
+        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+         <link rel="stylesheet" type="text/css" href="{% static 'library/style.css' %}">
+
+    <!-- jQuery library
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+         Latest compiled JavaScript
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+</head>
+<body>
+            <nav class="navbar navbar-dark " style="background-color:#000080">
+              <div class="container-fluid">
+                <div class="navbar-header">
+                  <a class="navbar-brand" href="/">Home</a>
+                  <a class="navbar-brand" href="{% url 'library:contact' %}">Contact</a>
+                  <a class="navbar-brand" href="{% url 'library:about' %}">About us</a>
+
+                </div>
+                 <ul class="nav navbar-nav navbar-right">
+
+                     <a class="navbar-brand" href="{% url 'login' %}"><i class="fa fa-user" aria-hidden="true"></i> Admin</a>
+                   <!--  <a class="navbar-brand" href="{% url 'library:stdlogin' %}"><i class="fa fa-users" aria-hidden="true"></i> student</a>-->
+                 </ul>
+
+            </nav>
+
+
+
+
+{% block body %}
+{% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+{% extends 'student/stdbase.html' %}
+ <title>{% block title %}available books{% endblock %}</title>
+{% block body3 %}
+ <div class="container card ">
+              <div class="bg-primary">
+                <h1 class="card-header" style="color:black;">Available book</h1>
+              </div>
+           <div class="card-body">
+            {% for element in book %}
+              <div class="bg-light">
+                  <div class="text-dark">{{element.title }}</div>
+                 <div class="text-right">
+                    <button type="submit" class="save btn btn-warning"><a href="{% url 'library:book_detail' id=element.id  %}">view details</a></button>
+                    <button type="submit" class="save btn btn-default"><a href="#">Issue</a></button></p>
+                 </div>
+              </div>
+            {% endfor %}
+
+           </div>
+ </div>
+
+
+
+{% endblock %}

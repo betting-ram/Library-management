@@ -1,0 +1,25 @@
+{% extends 'library/adminbase1.html' %}
+ <title>{% block title %}booklist{% endblock %}</title>
+{% block body2 %}
+<br>
+         <div class="container card ">
+             <div class="float-right">
+                <a href="/add/book/" class="btn btn-success">Add new book</a>
+             </div>
+
+              <div class="bg-primary">
+                <h1 class="card-header" style="color:black;">Book list</h1>
+              </div>
+           <div class="card-body">
+            {% for element in books %}
+              <div class="bg-light">
+                  <div class="text-dark">{{element.id}}.<a href="{% url 'library:book_detail' id=element.id  %}">{{element.title }}</a></div>
+                 <div class="text-right">
+                    <button type="submit" class="save btn btn-dark"><a href="{% url 'library:bookupdate' id=element.id %}">update</a></button>
+                    <button type="submit" class="save btn btn-danger"><a href="{% url 'library:bookdelete' id=element.id %}">Delete</a></button></p>
+                 </div>
+              </div>
+            {% endfor %}
+           </div>
+         </div>
+{% endblock %}
